@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import lodash from 'lodash';
-import "../css/main.css"
+import '../css/main.css'
 
 const $button = $('<button>Click here to get started</button>');
 $('body').append('<p>Holberton Dashboard</p>');
