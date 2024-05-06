@@ -3,6 +3,7 @@ import lodash from 'lodash';
 import '../css/main.css'
 
 const $button = $('<button>Click here to get started</button>');
+$('body').append('<div id="logo"></div>');
 $('body').append('<p>Holberton Dashboard</p>');
 $('body').append('<p>Dashboard data for the students</p>');
 $('body').append($button);
