@@ -1,4 +1,14 @@
 .Notifications {
-    border: solid red;
-    padding: 5rem;
+    border: dashed red;
+    padding: 2rem;
+}
+
+li[data-priority="default"] {
+    color: blue;
+    font-size: larger;
+}
+
+li[data-priority="urgent"] {
+    color: red;
+    font-size: larger;
 }
