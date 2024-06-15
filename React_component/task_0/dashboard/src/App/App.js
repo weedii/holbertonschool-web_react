@@ -8,7 +8,7 @@ import CourseList from "../CourseList/CourseList";
 import propTypes from "prop-types";
 
 // implement class components
-class App extends PureComponent {
+class App extends React.Component {
   render() {
     // assign props to local variables
     const { isLoggedIn } = this.props;
