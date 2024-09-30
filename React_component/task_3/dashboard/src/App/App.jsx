@@ -46,6 +46,7 @@ class App extends PureComponent {
         <Header />
         <div className="App-body">
           {this.isLoggedIn ? (
+            <BodySectionWithMarginBotto
             <CourseList listCourses={listCourses} />
           ) : (
             <Login />
