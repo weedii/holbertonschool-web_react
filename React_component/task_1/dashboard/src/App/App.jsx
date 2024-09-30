@@ -7,7 +7,7 @@ import Footer from "../Footer/Footer";
 import CourseList from "../CourseList/CourseList";
 import propTypes from "prop-types";
 
-// implement class component s
+// implement class components
 class App extends PureComponent {
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyDownLogout);
