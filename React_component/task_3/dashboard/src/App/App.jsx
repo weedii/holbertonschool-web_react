@@ -6,6 +6,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import CourseList from "../CourseList/CourseList";
 import propTypes from "prop-types";
+import BodySectionWithMarginBottom from "../BodySection/BodySectionWithMarginBottom";
 
 // implement class components
 class App extends PureComponent {
@@ -46,11 +47,16 @@ class App extends PureComponent {
         <Header />
         <div className="App-body">
           {this.isLoggedIn ? (
-            <BodySectionWithMarginBotto
-            <CourseList listCourses={listCourses} />
+            <BodySectionWithMarginBottom title={"Log in to continue"}>
+              <CourseList listCourses={listCourses} />
+            </BodySectionWithMarginBottom>
           ) : (
             <Login />
           )}
+
+          <BodySectionWithMarginBottom title={"News from the School"}>
+            <p>Holberton School News goes here</p>
+          </BodySectionWithMarginBottom>
         </div>
         <div className="App-footer">
           <Footer />
