@@ -85,7 +85,7 @@ Notification.propTypes = {
 
 const styles = StyleSheet.create({
   notifications: {
-    border: "1px solid #E11D3F", // Direct color replacement for var(--primar-color)
+    border: "1px solid #E11D3F",
     padding: "1rem",
   },
   menuItem: {
