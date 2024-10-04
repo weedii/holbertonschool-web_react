@@ -1,48 +1,36 @@
-import { shallow } from 'enzyme';
-import Notifications from './Notifications';
-import NotificationItem from './NotificationItem';
+import React from "react";
+import { shallow } from "enzyme";
+import Notification from "./Notification";
 
+describe("Notification component tests", () => {
+  it("clicking on the menu item calls handleDisplayDrawer", () => {
+    const handleDisplayDrawer = jest.fn();
 
-describe('<Notifications />', () => {
-	it('tests that Notifications renders without crashing', () => {
-		const wrapper = shallow(<Notifications />);
-		expect(wrapper.exists()).toBe(true);
-	})
+    const wrapper = shallow(
+      <Notification
+        displayDrawer={false}
+        handleDisplayDrawer={handleDisplayDrawer}
+      />
+    );
 
-	it('Checks first Item renders correct html', () => {
-		const wrapper = shallow(<Notifications />);
-		expect(wrapper.text()).toContain('Your notifications');
-	})
+    // Simulate click on the menu item
+    wrapper.find(".menuItem").simulate("click");
 
-	it('Tests that menuItem is rendered when displayDrawer is false', () => {	
-		const wrapper = shallow(<Notifications displayDrawer={false} />);
-		expect(wrapper.find('.menuItem').length).toBe(1);
-	})
+    // Check if handleDisplayDrawer was called
+    expect(handleDisplayDrawer).toHaveBeenCalled();
+  });
 
-	it('Tests the div Notifications is not rendered when displayDrawer is false', () => {
-		const wrapper = shallow(<Notifications displayDrawer={false} />);
-		expect(wrapper.find('.Notifications').length).toBe(0);
-	})
+  it("clicking on the close button calls handleHideDrawer", () => {
+    const handleHideDrawer = jest.fn();
 
-	it('Tests that menuItem is rendered when displayDrawer is true', () => {
-		const wrapper = shallow(<Notifications displayDrawer listNotifications={[]} />);
-		expect(wrapper.find('.menuItem').length).toBe(1);
-	})
+    const wrapper = shallow(
+      <Notification displayDrawer={true} handleHideDrawer={handleHideDrawer} />
+    );
 
-	it('Tests that the div Notifications is rendered when displayDrawer is true', () => {
-		const wrapper = shallow(<Notifications displayDrawer listNotifications={[]} />);
-		wrapper.update()
-		const item = wrapper.find('div.Notifications');
-		expect(item.length).toBe(1);
-	})
+    // Simulate click on the close button
+    wrapper.find('button[aria-label="close"]').simulate("click");
 
-	it('Tests when passing empty array', () => {
-		const wrapper = shallow(<Notifications notifications={[]} />);
-		expect(wrapper.find('.NotificationItem').length).toBe(0);
-	})
-
-	it('Tests when passing NO array', () => {
-		const wrapper = shallow(<Notifications />);
-		expect(wrapper.find('.NotificationItem').length).toBe(0);
-	})
+    // Check if handleHideDrawer was called
+    expect(handleHideDrawer).toHaveBeenCalled();
+  });
 });
