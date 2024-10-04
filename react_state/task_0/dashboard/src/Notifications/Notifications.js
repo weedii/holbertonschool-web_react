@@ -1,7 +1,7 @@
 import React from "react";
 import close_icon from "../assets/close-icon.png";
 import NotificationItem from "./NotificationItem";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 import { StyleSheet, css } from "aphrodite";
 
 class Notification extends React.Component {
@@ -82,19 +82,19 @@ Notification.defaultProps = {
 
 // Define propTypes
 Notification.propTypes = {
-  displayDrawer: propTypes.bool,
-  listNotifications: propTypes.arrayOf(
-    propTypes.shape({
-      id: propTypes.number,
-      type: propTypes.string,
-      value: propTypes.string,
-      html: propTypes.shape({
-        __html: propTypes.string,
+  displayDrawer: PropTypes.bool,
+  listNotifications: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      type: PropTypes.string,
+      value: PropTypes.string,
+      html: PropTypes.shape({
+        __html: PropTypes.string,
       }),
     })
   ),
-  handleDisplayDrawer: propTypes.func,
-  handleHideDrawer: propTypes.func,
+  handleDisplayDrawer: PropTypes.func,
+  handleHideDrawer: PropTypes.func,
 };
 
 const styles = StyleSheet.create({
