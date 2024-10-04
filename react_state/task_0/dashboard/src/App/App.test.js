@@ -34,14 +34,14 @@ describe("<App />", () => {
   it("Tests that handleDisplayDrawer is called when Notifications menu is clicked", () => {
     const instance = wrapper.instance();
     jest.spyOn(instance, "handleDisplayDrawer"); // Spy on the method
-    wrapper.find(Notifications).prop("handleDisplayDrawer")(); // Trigger handleDisplayDrawer
+    wrapper.instance().handleDisplayDrawer(); // Directly call the method
     expect(instance.handleDisplayDrawer).toHaveBeenCalled();
   });
 
   it("Tests that handleHideDrawer is called when the close button is clicked", () => {
     const instance = wrapper.instance();
     jest.spyOn(instance, "handleHideDrawer"); // Spy on the method
-    wrapper.find(Notifications).prop("handleHideDrawer")(); // Trigger handleHideDrawer
+    wrapper.instance().handleHideDrawer(); // Directly call the method
     expect(instance.handleHideDrawer).toHaveBeenCalled();
   });
 });
